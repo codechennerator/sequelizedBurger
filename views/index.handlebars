@@ -1,0 +1,44 @@
+<div class="container">
+  <h1>Eat-Da-Burger</h1>
+  <div class="row">
+      <div id = "notEatenWell" class="col-6">
+        <ul>
+          {{#each burgers}}
+            {{#unless devoured}}
+              <li class= "not-eaten">{{burger_name}}
+                <button class="change-devoured" data-id = "{{id}}">OMNOMNOM</button>
+              </li>
+            {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+      <div id = "eatenWell" class="col-6">
+        <ul>
+          {{#each burgers}}
+            {{#if devoured}}
+              <li class = "eaten">{{burger_name}}</li>
+            {{/if}}
+          {{/each}}
+        </ul>
+      </div>
+  </div>
+
+  <div class="row">
+    <form id = "burgerForm col-12">
+      <div class="row">
+        <label for = "newBurger">Enter a burger you would like to eat.</label>
+      </div>
+      <div class="row">
+        <textarea id="newBurger" name="newBurger" placeholder="Type a burger name..."></textarea>
+      </div>
+      <div class="row">
+        <button type="button" id="submitBurger">Gimme Gimme</button>
+      </div>
+
+    </form>
+
+  </div>
+
+
+</div>
+
